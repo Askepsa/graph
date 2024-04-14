@@ -24,12 +24,12 @@ public:
 
   void check_edges() {
     cout << this->data << endl;
-    ;
+
     for (auto v : this->edges) {
       cout << v->data << ' ';
     }
+
     cout << endl << endl;
-    ;
   }
 
   void dfs() {

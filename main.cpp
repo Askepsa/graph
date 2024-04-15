@@ -22,14 +22,15 @@ public:
     }
   }
 
+  // shows edges of vertices
   void check_edges() {
-    cout << this->data << endl;
+    cout << this->data << " -> ";
 
     for (auto v : this->edges) {
       cout << v->data << ' ';
     }
 
-    cout << endl << endl;
+    cout << endl;
   }
 
   void dfs() {
@@ -49,7 +50,6 @@ public:
 
       vertex->is_visited = true;
 
-      // push all edges of vertex to stack
       for (auto v : vertex->edges) {
         if (!v->is_visited)
           s.push(v);
@@ -116,16 +116,16 @@ int main(void) {
   j->insert_edge(g);
 
   // Check if edges are valid
-  // a->check_edges();
-  // b->check_edges();
-  // c->check_edges();
-  // d->check_edges();
-  // e->check_edges();
-  // f->check_edges();
-  // g->check_edges();
-  // h->check_edges();
-  // i->check_edges();
-  // j->check_edges();
+  a->check_edges();
+  b->check_edges();
+  c->check_edges();
+  d->check_edges();
+  e->check_edges();
+  f->check_edges();
+  g->check_edges();
+  h->check_edges();
+  i->check_edges();
+  j->check_edges();
 
   // You can only run these function once
   // as classes' is_visited attribute must be set to false again

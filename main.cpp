@@ -85,7 +85,7 @@ public:
     cout << endl;
   }
 
-  ~Vertex() { free(this); }
+  ~Vertex() { delete(this); }
 };
 
 int main(void) {

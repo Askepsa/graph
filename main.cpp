@@ -3,16 +3,17 @@
 #include <queue>
 #include <stack>
 #include <vector>
+
 using namespace std;
 
-class Vertex {
+template <typename T> class Vertex {
 private:
-  char data;
-  vector<Vertex *> edges;
+  T data;
   bool is_visited;
+  vector<Vertex *> edges;
 
 public:
-  Vertex(char c) : data{c}, is_visited{false}, edges{} {}
+  Vertex(T c) : data{c}, is_visited{false}, edges{} {}
 
   void insert_edge(Vertex *edge) {
     if (find(edges.begin(), edges.end(), edge) == edges.end()) {
@@ -25,7 +26,7 @@ public:
   void check_edges() {
     cout << this->data << " -> ";
 
-    for (auto v : this->edges) {
+    for (auto v : edges) {
       cout << v->data << ' ';
     }
 
@@ -84,7 +85,7 @@ public:
     cout << endl;
   }
 
-  ~Vertex() { delete(this); }
+  ~Vertex() { delete (this); }
 };
 
 int main(void) {

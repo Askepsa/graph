@@ -1,8 +1,8 @@
-main : main.cpp
+main: main.cpp
 	$(CXX) -o $@ $<
 	@./main
 
-run :
+run:
 	./main
 
 clean:
